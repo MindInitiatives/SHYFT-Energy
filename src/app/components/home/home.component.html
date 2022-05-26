@@ -1,0 +1,89 @@
+    
+<div *ngIf="!noData">
+    <!-- Header -->
+    <header class="ex-header">
+     <div class="container">
+         <div class="row">
+             <div class="col-xl-10 offset-xl-1">
+                <i *ngIf="isUserLoading" class="fa fa-spin fa-2x fa-circle-notch"></i>
+                 <h2 *ngIf="user && !isUserLoading">{{user.attributes.first_name}}&nbsp;{{user.attributes.last_name}}'s <span class="fz-16">SHYFT device Information</span></h2>
+             </div> <!-- end of col -->
+         </div> <!-- end of row -->
+     </div> <!-- end of container -->
+ </header> <!-- end of ex-header -->
+ <!-- end of header -->
+
+    <!-- Basic -->
+    <div class="ex-basic-1 pt-3 pb-5">
+     <div class="container">
+         <div class="row">
+             <div class="col-xl-11 offset-xl-1">
+                 <div class="text-box">
+                     <p>User's name</p>
+                     <i *ngIf="isUserLoading" class="fa fa-spin fa-2x fa-circle-notch"></i>
+                     <h3 *ngIf="user && !isUserLoading">{{user.attributes.first_name}}&nbsp;{{user.attributes.last_name}}</h3>
+                 </div> <!-- end of text-box -->                    
+             </div> <!-- end of col -->
+         </div> <!-- end of row -->
+     </div> <!-- end of container -->
+ </div> <!-- end of ex-basic-1 -->
+ <!-- end of basic -->
+
+    <!-- Basic -->
+    <div class="ex-basic-1 pt-3 pb-5">
+     <div class="container">
+         <div class="row">
+             <div class="col-xl-11 offset-xl-1">
+                 <div class="text-box">
+                     <p>Current Residence</p>
+                     <i *ngIf="isHouseholdLoading" class="fa fa-spin fa-2x fa-circle-notch"></i>
+                     <h3 *ngIf="household && !isHouseholdLoading">{{household.attributes.address_1}}</h3>
+                 </div> <!-- end of text-box -->                    
+             </div> <!-- end of col -->
+         </div> <!-- end of row -->
+     </div> <!-- end of container -->
+ </div> <!-- end of ex-basic-1 -->
+ <!-- end of basic -->
+
+    <!-- Basic -->
+    <div class="ex-basic-1 pt-3 pb-5">
+     <div class="container">
+         <div class="row">
+             <div class="col-xl-11 offset-xl-1">
+                 <div class="text-box">
+                     <p>Total Energy used for Today</p>
+                     <i *ngIf="isHouseholdLoading" class="fa fa-spin fa-2x fa-circle-notch"></i>
+                     <h3 *ngIf="household && !isHouseholdLoading">{{totalEnergyUsedtoday}} Joules</h3>
+                 </div> <!-- end of text-box -->                    
+             </div> <!-- end of col -->
+         </div> <!-- end of row -->
+     </div> <!-- end of container -->
+ </div> <!-- end of ex-basic-1 -->
+ <!-- end of basic -->
+    
+</div> 
+
+<div *ngIf="noData">
+
+
+        <!-- Details 1 -->
+        <div id="details" class="basic-1 bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-12">
+                        <div class="image-container">
+                            <img class="img-fluid" src="assets/images/details-1.svg" alt="alternative" width="200px">
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                    <div class="col-lg-12 col-xl-12">
+                        <div class="text-container">
+                            <h1>An Error Ocurred !</h1>
+                            <p>We encountered an error while loading the requested page.<br/>
+                                Try Refreshing your browser or Check your network Connectivity</p>
+                        </div> <!-- end of text-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-1 -->
+        <!-- end of details 1 -->
+</div>
