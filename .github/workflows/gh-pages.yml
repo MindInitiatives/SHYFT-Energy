@@ -33,3 +33,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: dist/shyft-energy
         enable_jekyll: true
+        
+    redirects:
+      redirect_to: index.html
+      try_files: true
