@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   public isHouseholdLoading!: boolean;
   public totalEnergyUsedtoday!: number;
   public noData: boolean = false;
+  public errorMessage!: string;
+  
   constructor(
     private userService: UserService
   ) { }
@@ -41,9 +43,9 @@ export class HomeComponent implements OnInit {
         if (res[1]) {
           this.household = res[1].data;
           this.isHouseholdLoading = false;
+          this.getTotalEnergyUsedToday(this.household)
         }
 
-      this.getTotalEnergyUsedToday(this.household)
       
       },
       error: (err) => {
@@ -56,6 +58,10 @@ export class HomeComponent implements OnInit {
   }
 
   getTotalEnergyUsedToday(household: IHousehold) {
+    if (!household) {
+        this.errorMessage = 'Could not Fetch Total Energy used';
+        return;
+    }
     const genUsage = household.attributes.usage_data.gen_usage_today;
     const gridUsage = household.attributes.usage_data.grid_usage_today;
     this.totalEnergyUsedtoday = Math.round((genUsage + gridUsage) * 1e12) / 1e12;

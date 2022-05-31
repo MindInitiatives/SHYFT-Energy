@@ -69,6 +69,22 @@ a:hover {
   text-decoration: underline;
 }
 
+.fz-12 {
+  font-size: 12px;
+}
+
+.fz-14 {
+  font-size: 14px;
+}
+
+.fz-16 {
+  font-size: 16px;
+}
+
+.fz-18 {
+  font-size: 18px;
+}
+
 .bg-gray {
   background-color: #f9f8f8;
 }
@@ -131,10 +147,6 @@ a:hover {
   padding-top: 9rem;
   padding-bottom: 5rem;
   background-color: #fff2dc;
-}
-
-.ex-header h2.fz-16 {
-  font-size: 16px;
 }
 
 .ex-basic-1 .text-box {

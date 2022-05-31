@@ -6,7 +6,7 @@
          <div class="row">
              <div class="col-xl-10 offset-xl-1">
                 <i *ngIf="isUserLoading" class="fa fa-spin fa-2x fa-circle-notch"></i>
-                 <h2 *ngIf="user && !isUserLoading">{{user.attributes.first_name}}&nbsp;{{user.attributes.last_name}}'s <span class="fz-16">SHYFT device Information</span></h2>
+                 <h2 *ngIf="user && !isUserLoading">{{user.attributes.first_name}}&nbsp;{{user.attributes.last_name}}'s <span class="fz-18">SHYFT device Information</span></h2>
              </div> <!-- end of col -->
          </div> <!-- end of row -->
      </div> <!-- end of container -->
@@ -53,7 +53,8 @@
                  <div class="text-box">
                      <p>Total Energy used for Today</p>
                      <i *ngIf="isHouseholdLoading" class="fa fa-spin fa-2x fa-circle-notch"></i>
-                     <h3 *ngIf="household && !isHouseholdLoading">{{totalEnergyUsedtoday}} Joules</h3>
+                     <h3 *ngIf="household && !isHouseholdLoading">{{totalEnergyUsedtoday}} <span *ngIf="!errorMessage">Joules</span></h3>
+                     <span *ngIf="errorMessage" class="text-danger fz-14">{{errorMessage}}</span>
                  </div> <!-- end of text-box -->                    
              </div> <!-- end of col -->
          </div> <!-- end of row -->
