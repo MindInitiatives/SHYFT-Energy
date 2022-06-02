@@ -1,6 +1,40 @@
-# ShyftEnergy
+<div align="center">
+<h2>SHYFT Energy</h2>
+<img src="https://img.shields.io/badge/build-passing-green.svg">
+<img src="https://img.shields.io/badge/license-MIT-green.svg">
+</div>
+
+## Introduction
+
+A single-page web app that allows a user to get information on a particular location/residence; specifically, and how much energy has been used at the residence today.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+
+
+## Demo
+
+https://mindinitiatives.github.io/SHYFT-Energy
+
+
+## Technologies
+
+- [Typescript]
+- [Angular]
+- [Bootstrap]
+- [Font Awesome]
+
+## Tools
+- [Postman]
+- [Jasmine]
+- [Github Actions]
+
+## Installation
+
+- Install dependencies
+
+```
+$ npm install
+```
 
 ## Development server
 
