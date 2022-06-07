@@ -11,37 +11,42 @@ import { IUserApiResponse } from '../models/user.model';
 })
 export class UserService extends BaseUrl {
 
+  httpOptions = {
+    headers: new HttpHeaders()
+  }
+  authToken!: string;
+
   constructor(private http: HttpClient) { 
     super();
   }
 
-  getCurrentUser(authToken: string): Observable<IUserApiResponse> {
+  private buildRequestHeaders(): void {
+    this.getAuthToken();
+		let headers = new HttpHeaders({
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${this.authToken}`
+		});
+		this.httpOptions.headers = headers;
+	}
+
+  getCurrentUser(): Observable<IUserApiResponse> {
+    this.buildRequestHeaders();
     return this.http.get<IUserApiResponse>(
       `${this.BASE_URL}/users/me`,
-
-      {
-        headers: new HttpHeaders({
-          'content-type': 'application/json',
-          'Authorization': `Bearer ${authToken}`
-        }),
-      }
+        this.httpOptions
     );
   }
 
-  getCurrentHousehold(id: string, authToken: string): Observable<IHouseholdApiResponse> {
+  getCurrentHousehold(id: string): Observable<IHouseholdApiResponse> {
+    this.buildRequestHeaders();
     return this.http.get<IHouseholdApiResponse>(
       `${this.BASE_URL}/households/${id}`,
-
-      {
-        headers: new HttpHeaders({
-          'content-type': 'application/json',
-          'Authorization': `Bearer ${authToken}`
-        }),
-      }
+      this.httpOptions
     );
   }
 
   getAuthToken() {
-    return environment.authToken;
+    this.authToken = environment.authToken;
+    return this.authToken;
   }
 }

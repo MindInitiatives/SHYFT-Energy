@@ -1,0 +1,15 @@
+<div class="ex-basic-1 pt-3 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-11 offset-xl-1">
+                <div class="text-box">
+                    <p>{{title}}</p>
+                    <i *ngIf="loading" class="fa fa-spin fa-2x fa-circle-notch"></i>
+                    <h3 *ngIf="!loading">{{subtitle}}</h3>
+                    <span *ngIf="errorMessage" class="text-danger fz-14">{{errorMessage}}</span>
+                </div> <!-- end of text-box -->                    
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of ex-basic-1 -->
+<!-- end of basic -->

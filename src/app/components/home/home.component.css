@@ -1,12 +1,20 @@
-.basic-1 {
-    height: 100vh;
+.search-input{
+    position: relative;
+    margin-top: 30px;
 }
 
-.image-container,
-.text-container {
-    text-align: center;
+input{
+    padding-left: 55px;
 }
 
-.image-container img {
-    border-radius: 50%;
+.search-icon{
+    position: absolute;
+    left: 3%;
+    top: 15px;
+    z-index: 999;
+}
+
+.search-icon i {
+    color: #272556;
+    font-size: 20px;
 }

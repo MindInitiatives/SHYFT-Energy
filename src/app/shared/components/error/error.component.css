@@ -1,0 +1,21 @@
+.back-btn {
+    cursor: pointer;
+}
+
+.back-btn:hover,
+.back-btn:focus {
+    text-decoration: underline;
+}
+
+.basic-1 {
+    height: 100vh;
+}
+
+.image-container,
+.text-container {
+    text-align: center;
+}
+
+.image-container img {
+    border-radius: 50%;
+}
